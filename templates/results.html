@@ -3,21 +3,28 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="static/app.css">
     <title>Results</title>
-
+    <link rel="stylesheet" type="text/css" href="static/results.css">
 </head>
 
 <body>
-	{{results}}
 
-	<br />
-	<ul>
-    {% for item in data %}
-    <li>{{data.time_string}}</li>
-    <li>{{data.tags}}</li>
-    <li>{{data.image_url}}</li>
-    {% endfor %}
-   </ul>
+<div id="results_wrapper">
 
+  {% for result in results %}
 
+    <div class="result_item_wrapper">
+    	<div class="time_string"> 
+    		{{ result.time_string }}
+    	</div>
+    	<div class="image_box">
+			<img src={{ result.image_url}} > <br />
+		</div>
+		<div class="tags">
+			{{ result.tags}} <br />
+		</div>
+	</div>
+  {% endfor %}
+
+</div>
 </body>
 </html>

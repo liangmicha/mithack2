@@ -1,0 +1,30 @@
+.results_wrapper {
+	width: 100%;
+	height: 20%;
+	display: block;
+}
+
+.result_item_wrapper {
+	width: 80%;
+	height: 300px;
+	display: block;
+	margin: 30px 30px;
+	padding: 30px 30px;
+}
+
+.image_box {
+	height: 300px;
+	width: 80%;
+}
+
+.image_box img {
+	height: 200px;
+	width: 80%
+}
+.tags {
+
+}
+
+.time_string {
+	text-align: center;
+}

@@ -20,8 +20,8 @@ def jsonreq(request):
 
 @app.route('/signup', methods = ['GET', 'POST'])
 def signup():
-    email = request.form['search-query']
-    results = "some json object %s" %(email) 
+    query_string = request.form['search-query']
+    results = algorithms.get_patient_data_json(query_string)
     return render_template("results.html", results=results)
 
 if __name__ == '__main__':
