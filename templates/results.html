@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="static/app.css">
+    <title>Results</title>
+
+</head>
+
+<body>
+	{{results}}
+
+	<br />
+	<ul>
+    {% for item in data %}
+    <li>{{data.time_string}}</li>
+    <li>{{data.tags}}</li>
+    <li>{{data.image_url}}</li>
+    {% endfor %}
+   </ul>
+
+
+</body>
+</html>
