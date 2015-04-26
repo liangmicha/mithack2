@@ -1,29 +1,95 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="static/app.css">
+    <link rel="stylesheet" type="text/css" href="static/app.css">
     <title>Results</title>
     <link rel="stylesheet" type="text/css" href="static/results.css">
 </head>
 
 <body>
 
-<div id="results_wrapper">
+<div id="search-bar"> 
+	<form class="form-wrapper cf" action="/signup" method="post">
+  	<input type="text"  name="search-query" required>
+  	<button type="submit" value="Send">Search</button>
+</form>
+</div>
 
-  {% for result in results %}
 
-    <div class="result_item_wrapper">
-    	<div class="time_string"> 
-    		{{ result.time_string }}
-    	</div>
-    	<div class="image_box">
-			<img src={{ result.image_url}} > <br />
-		</div>
-		<div class="tags">
-			{{ result.tags}} <br />
-		</div>
+  	
+        
+<div class="container"> Prescription
+    <div class="row">
+    	{% for result in results_prescription %}
+    	<div class="lst">
+	      <h3 class="color-time-string">{{result.time_string}}</h3>
+	      <img src={{result.image_url}}>	      
+	      <div id="popular-tags">
+	         <div id="popular-tags-title"> Tags </div> <br />
+	         <div class="tag-list"> 
+	         	{% for tag in result.tags %}
+                 <div class="tag"> {{tag}} </div>
+            	{% endfor %}
+            </div>
+	     </div>
+	    </div>
+	 {% endfor %}
 	</div>
-  {% endfor %}
+</div>
+<div class="container"> Prescription
+    <div class="row">
+    	{% for result in results_prescription %}
+    	<div class="lst">
+	      <h3 class="color-time-string">{{result.time_string}}</h3>
+	      <img src={{result.image_url}}>	      
+	      <div id="popular-tags">
+	         <div id="popular-tags-title"> Tags </div> <br />
+	         <div class="tag-list"> 
+	         	{% for tag in result.tags %}
+                 <div class="tag"> {{tag}} </div>
+            	{% endfor %}
+            </div>
+	     </div>
+	    </div>
+	 {% endfor %}
+	</div>
+</div>
+<div class="container"> Prescription
+    <div class="row">
+    	{% for result in results_prescription %}
+    	<div class="lst">
+	      <h3 class="color-time-string">{{result.time_string}}</h3>
+	      <img src={{result.image_url}}>	      
+	      <div id="popular-tags">
+	         <div id="popular-tags-title"> Tags </div> <br />
+	         <div class="tag-list"> 
+	         	{% for tag in result.tags %}
+                 <div class="tag"> {{tag}} </div>
+            	{% endfor %}
+            </div>
+	     </div>
+	    </div>
+	 {% endfor %}
+	</div>
+</div>
+<div class="container"> Prescription
+    <div class="row">
+    	{% for result in results_prescription %}
+    	<div class="lst">
+	      <h3 class="color-time-string">{{result.time_string}}</h3>
+	      <img src={{result.image_url}}>	      
+	      <div id="popular-tags">
+	         <div id="popular-tags-title"> Tags </div> <br />
+	         <div class="tag-list"> 
+	         	{% for tag in result.tags %}
+                 <div class="tag"> {{tag}} </div>
+            	{% endfor %}
+            </div>
+	     </div>
+	    </div>
+	 {% endfor %}
+	</div>
+</div>
 
 </div>
 </body>
