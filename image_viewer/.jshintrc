@@ -1,0 +1,14 @@
+{
+    "browser": true,
+    "devel": true,
+    "jquery": true,
+    "unused": true,
+    "undef": true,
+    "globals": {
+        "dwv": true,
+        "openjpeg": false
+    },
+    "curly": true,
+    "newcap": true,
+    "indent": 4
+}

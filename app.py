@@ -21,14 +21,18 @@ def jsonreq(request):
 @app.route('/signup', methods = ['GET', 'POST'])
 def signup():
     query_string = request.form['search-query']
-    results_prescription, results_xray, results_vitals, results_notes= algorithms.get_patient_data_json(query_string)
-    return render_template("results.html", 
-        results_prescription=results_prescription,
-        results_xray=results_xray,
-        results_vitals=results_vitals,
-        results_notes=results_notes,
-    )
+    # if query_string == "Arjun Dubar xrays before April":
+    # return render_template('results_xrays.html', results=algorithms.get_patient_data_json(query_string))
+    # if query_string == "Sanjit before March 2015 prescriptions":
+    return render_template('results_prescription.html', results=algorithms.get_patient_data_json(query_string))
+    # if query_string == "Arjun Dubar notes":
+    #     return render_template('results_notes.html', results=algorithms.get_patient_data_json(query_string))
+    # if query_string == "Kumar m. lab tests":
+    #     return render_template('results_tests.html', results=algorithms.get_patient_data_json(query_string))
 
+@app.route('/xray_viewer')
+def image_viewer():
+    return render_template('../image_viewer/viewers/index.html')
 
 if __name__ == '__main__':
     app.run()

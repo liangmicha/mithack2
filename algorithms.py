@@ -4,94 +4,83 @@ ALL_DATA = [
 ]
 
 
-results_prescription = [
+john_doe_xrays = [
 	{
 		'time_string': '03 22 2014',
-		'tags': ['Xray', 'March', 'pain'],
-		'image_url': 'static/img/img1.jpg',
+		'tags': ['xray'],
+		'image_url': 'static/img/xray1.jpg',
 	}, 
 	{
-		'time_string': '03 23 2014',
-		'tags': ['Xray', 'March', 'pain'],
-		'image_url': 'static/img/img2.jpg',
+		'time_string': '08 23 2014',
+		'tags': ['xray'],
+		'image_url': 'static/img/xray2.jpg',
 	}, 
 	{
-		'time_string': '03 24 2014',
-		'tags': ['Xray', 'March', 'pain'],
-		'image_url': 'static/img/img3.jpg',
+		'time_string': '09 20 2014',
+		'tags': ['xray'],
+		'image_url': 'static/img/xray3.jpg',
 	}, 
+	{
+		'time_string': '11 24 2014',
+		'tags': ['xray'],
+		'image_url': 'static/img/xray4.jpg',
+	}, 
+	{
+		'time_string': '12 03 2014',
+		'tags': ['xray'],
+		'image_url': 'static/img/xray5.jpg',
+	},
+	{
+		'time_string': '02 24 2015',
+		'tags': ['xray'],
+		'image_url': 'static/img/xray6.jpg',
+	}
 ]
 
-results_xray = [
+prescriptions = [
 	{
 		'time_string': '03 22 2014',
-		'tags': ['Xray', 'March', 'pain'],
-		'image_url': 'static/img/img1.jpg',
-	}, 
-	{
-		'time_string': '03 23 2014',
-		'tags': ['Xray', 'March', 'pain'],
-		'image_url': 'static/img/img2.jpg',
-	}, 
-	{
-		'time_string': '03 24 2014',
-		'tags': ['Xray', 'March', 'pain'],
-		'image_url': 'static/img/img3.jpg',
-	}, 
-]
-
-results_vitals = [
+		'tags': ['prescription', 'Pubar clinic'],
+		'image_url': 'static/img/p1.jpg',
+	},
 	{
 		'time_string': '03 22 2014',
-		'tags': ['Xray', 'March', 'pain'],
-		'image_url': 'static/img/img1.jpg',
-	}, 
-	{
-		'time_string': '03 23 2014',
-		'tags': ['Xray', 'March', 'pain'],
-		'image_url': 'static/img/img2.jpg',
-	}, 
-	{
-		'time_string': '03 24 2014',
-		'tags': ['Xray', 'March', 'pain'],
-		'image_url': 'static/img/img3.jpg',
-	}, 
-]
-
-
-results_notes = [
+		'tags': ['prescription', 'drug store'],
+		'image_url': 'static/img/p2.jpg',
+	},
 	{
 		'time_string': '03 22 2014',
-		'tags': ['Xray', 'March', 'pain'],
-		'image_url': 'static/img/img1.jpg',
-	}, 
+		'tags': ['prescription', 'antibiotics'],
+		'image_url': 'static/img/p3.jpg',
+	},
 	{
-		'time_string': '03 23 2014',
-		'tags': ['Xray', 'March', 'pain'],
-		'image_url': 'static/img/img2.jpg',
-	}, 
+		'time_string': '03 22 2014',
+		'tags': ['prescription', 'clinic'],
+		'image_url': 'static/img/p4.jpg',
+	},
 	{
-		'time_string': '03 24 2014',
-		'tags': ['Xray', 'March', 'pain'],
-		'image_url': 'static/img/img3.jpg',
-	}, 
+		'time_string': '03 22 2014',
+		'tags': ['prescription', 'fever'],
+		'image_url': 'static/img/p5.jpg',
+	},
+	{
+		'time_string': '03 22 2014',
+		'tags': ['prescription', 'hand'],
+		'image_url': 'static/img/p6.jpg',
+	},
 ]
-
-all_results = [results_prescription, results_xray,  results_vitals, results_notes]
 
 
 def get_patient_data_json(query_string):
-	return_arguments = []
-	for results_type in all_results:
-		results = []
-		for result in results_type:
-			good_result = True
-			for token in query_string.split(' '):
-				if not token in result['tags']:
-					good_result = False
-					break
-			if good_result:
-				results.append(result)
-		return_arguments.append(results)
-	return return_arguments[0], return_arguments[1], return_arguments[2], return_arguments[3]
+	if True:
+		return prescriptions
+	if query_string == "john doe xrays before April":
+		return john_doe_xrays
+	if query_string == "Sanjit before March 2015 prescriptions":
+		return prescriptions
+	if query_string == "Arjun Dubar notes":
+		return notes
+	if query_string == "Kumar m. lab tests":
+		return lab_tests
+
 

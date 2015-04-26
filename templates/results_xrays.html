@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="static/app.css">
+    <title>Results</title>
+<!--     <link rel="stylesheet" type="text/css" href="static/results.css"> -->
+    <link rel="stylesheet" type="text/css" href="static/columns.css">
+</head>
+
+<body>
+
+<div id="search-bar"> 
+	<form class="form-wrapper cf" action="/signup" method="post">
+  	<input type="text"  name="search-query" required>
+  	<button type="submit" value="Send">Search</button>
+	</form>
+</div>
+
+
+<div class="wrapper">
+	<div class="container">
+		<ul class="grid-nav">
+			<li><a href="#" data-id="two-columns" class="active">2 Columns</a></li>
+			<li><a href="#" data-id="three-columns">3 Columns</a></li>
+			<li><a href="#" data-id="four-columns">4 Columns</a></li>
+		</ul>
+		
+		<hr />
+		
+		<div id="two-columns" class="grid-container" style="display:block;">
+			<h1> Xrays </h1>
+			<ul class="rig columns-2">
+				{% for result in results %}
+				<li>
+					<img src={{result.image_url}} />
+					<h3> {{result.time_string}} </h3>
+					{% for tag in result.tags %}
+               			  <div class="tag"> {{tag}} </div>
+            		{% endfor %}
+            	</li>
+            	{% endfor %}
+			</ul>
+		</div>
+		<!--/#two-columns-->
+		
+		<div id="three-columns" class="grid-container">
+			<h1> Xrays </h1>
+			<ul class="rig columns-3">
+				{% for result in results %}
+				<li>
+					<img src={{result.image_url}} />
+					<h3> {{result.time_string}} </h3>
+					{% for tag in result.tags %}
+               			  <div class="tag"> {{tag}} </div>
+            		{% endfor %}
+            	</li>
+            	{% endfor %}
+			</ul>
+		</div>
+		<!--/#three-columns-->
+		
+		<div id="four-columns" class="grid-container">
+			<h1> Xrays </h1>
+			<ul class="rig columns-4">
+				{% for result in results %}
+				<li>
+					<img src={{result.image_url}} />
+					<h3> {{result.time_string}} </h3>
+					{% for tag in result.tags %}
+               			  <div class="tag"> {{tag}} </div>
+            		{% endfor %}
+            	</li>
+            	{% endfor %}
+			</ul>
+		</div>
+
+		<!--/#four-columns-->
+		
+		<hr />
+		
+	</div>
+	<!--/.container-->
+</div>
+<!--/.wrapper-->
+  	
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('.grid-nav li a').on('click', function(event){
+		event.preventDefault();
+		$('.grid-container').fadeOut(500, function(){
+			$('#' + gridID).fadeIn(500);
+		});
+		var gridID = $(this).attr("data-id");
+		
+		$('.grid-nav li a').removeClass("active");
+		$(this).addClass("active");
+	});
+	// $('li').on('click', function(event){
+	// 	url = 'static/../xray_viewer'
+	// 	window.location = url;
+	// });
+});
+
+</script>
+</body>
+</html>

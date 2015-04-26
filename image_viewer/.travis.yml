@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+- '0.10'
+
+env:
+  global:
+    - secure: jWTxnnLGmoM+j3148tIF2SJMEyub2j9kmR15vEKVeP6BbUvNgWH9jTSwf6Ddv3qjbAb3D8p9nhYBOZgRub1stwjWCH+DS17AoKFeRVj4Q8Sf0XBHGzJbn0FkstilVmGv3Zr/FVmDSEm1xSSHanWCUQX0uH9r/XB8z7khp4pLryo=
+
+after_success: 
+  - chmod +x ./resources/update-gh-pages.sh
+  - ./resources/update-gh-pages.sh
