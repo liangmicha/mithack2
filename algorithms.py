@@ -78,8 +78,6 @@ def get_patient_data_json(query_string):
 		return john_doe_xrays
 	if query_string == "Sanjit before March 2015 prescriptions":
 		return prescriptions
-	if query_string == "Arjun Dubar notes":
-		return notes
 	if query_string == "Kumar m. lab tests":
 		return lab_tests
 
